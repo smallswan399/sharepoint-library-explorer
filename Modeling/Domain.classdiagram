@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="71657979-ea87-4d8f-9153-7a10aaf1420c" name="Domain" linkedPackageId="6c85f937-cc0b-434a-b8d6-27085442a77a" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="b919442b-9c9a-425d-8f21-8f9528744a92">
+      <profileInstance Id="aee86666-7ef4-4522-b763-deca436413d0" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="7cfccb04-9c2f-4be4-befb-0807a2e1d56d">
+      <profileInstance Id="67f5210b-b573-4350-837e-0e4d1987be5b" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="409fa50d-57f0-4ba5-9c8b-bf3cd15e466c" name="SharePointObject" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e7cf5c96-0533-4d25-82a3-9001ecdf44ff" />
+        <suppliersInternal>
+          <interfaceRealization Id="3ca3829c-dbe7-43ce-b2ff-29d6751a7002">
+            <interfaceMoniker Id="a9eeb35f-899d-4174-b9fd-b94d7a9c2e28" LastKnownName="ISharePointObject" />
+            <elementDefinition Id="b12ee9f5-2a67-411b-84d2-ea665a6b0f5e" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="a9eeb35f-899d-4174-b9fd-b94d7a9c2e28" name="ISharePointObject" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1124d719-b19d-49c1-b8d5-26316f9ac9a4" />
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="aeccd66b-4fcc-476d-afe2-ab2420a4217f" name="ISharePointSiteItem" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="41c8789b-8f25-4d08-8d3c-09ea022d6a81" />
+        <generalsInternal>
+          <generalization Id="5f3a88eb-e35e-44c3-b1ed-439289d240fe" isSubstitutable="false">
+            <interfaceMoniker Id="a9eeb35f-899d-4174-b9fd-b94d7a9c2e28" LastKnownName="ISharePointObject" />
+            <elementDefinition Id="d1adb67b-a649-470c-aeb1-9123709b9a9c" />
+          </generalization>
+        </generalsInternal>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="f530ef67-281d-4fbc-b3ca-8beef0eba7ec" name="ISharePointLibraryItem" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4bc34229-ec18-4158-bb66-987be760a244" />
+        <generalsInternal>
+          <generalization Id="26473366-4e7a-4b95-90ee-7c37858e67de" isSubstitutable="false">
+            <interfaceMoniker Id="a9eeb35f-899d-4174-b9fd-b94d7a9c2e28" LastKnownName="ISharePointObject" />
+            <elementDefinition Id="39495fd9-b814-42d8-85d3-92fdac2c78c4" />
+          </generalization>
+        </generalsInternal>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="5686c01a-bfb7-4a31-a55d-2f694cac3be8" name="ISharePointExpandableObjcect" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="02303f5d-e573-48e9-9afb-ecb038219925" />
+        <generalsInternal>
+          <generalization Id="847d6add-7ced-40c5-9506-203a36dd41e8" isSubstitutable="false">
+            <interfaceMoniker Id="a9eeb35f-899d-4174-b9fd-b94d7a9c2e28" LastKnownName="ISharePointObject" />
+            <elementDefinition Id="65fcc1cb-6a62-4a11-a463-04b687d618ca" />
+          </generalization>
+        </generalsInternal>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="f3c7e1a0-3d2f-4f50-a0c6-8e08f59cb3c4" name="ISharePointFile" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4ad5876a-3276-4d88-940f-d64a21b4c053" />
+        <generalsInternal>
+          <generalization Id="9a5c57cd-a907-415a-92f6-3d8813cfaa5f" isSubstitutable="false">
+            <interfaceMoniker Id="a9eeb35f-899d-4174-b9fd-b94d7a9c2e28" LastKnownName="ISharePointObject" />
+            <elementDefinition Id="b18b7a4f-3a18-473b-9285-dfcc1fc4c690" />
+          </generalization>
+        </generalsInternal>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f47cd520-082b-4abd-9443-6dc5eb8e35ec" name="SharePointFile" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2f9e5fd2-df8a-407e-b8f2-ffa07bde8f08" />
+        <suppliersInternal>
+          <interfaceRealization Id="0a64691a-28c3-4b75-a8b0-ddc332b2e4b3">
+            <interfaceMoniker Id="f3c7e1a0-3d2f-4f50-a0c6-8e08f59cb3c4" LastKnownName="ISharePointFile" />
+            <elementDefinition Id="4e5620db-aafa-4ce9-85ce-b0f661f6f665" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="35a18c6a-6d3d-49e4-bb85-79053123b807" isSubstitutable="false">
+            <classMoniker Id="409fa50d-57f0-4ba5-9c8b-bf3cd15e466c" LastKnownName="SharePointObject" />
+            <elementDefinition Id="66867a92-aa6b-456e-88a8-557c46b7ec14" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ba042156-9ba9-4b0c-96d0-bf95f790e54d" name="SharePointFolder" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e88dc243-0423-4b3b-bf04-afa99ca03605" />
+        <suppliersInternal>
+          <interfaceRealization Id="07d2247f-c305-40d9-837d-4a530a6592c3">
+            <interfaceMoniker Id="f530ef67-281d-4fbc-b3ca-8beef0eba7ec" LastKnownName="ISharePointLibraryItem" />
+            <elementDefinition Id="97739467-4f08-420a-bc14-25838f4bce19" />
+          </interfaceRealization>
+          <interfaceRealization Id="a27e5c5c-ad5c-4eaa-9d19-b6cd30518cdc">
+            <interfaceMoniker Id="5686c01a-bfb7-4a31-a55d-2f694cac3be8" LastKnownName="ISharePointExpandableObjcect" />
+            <elementDefinition Id="fa5ecc0a-fded-4105-84c6-b30cf8cdcf56" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="1eb848db-9861-482c-8f98-cb44cc554fba" isSubstitutable="false">
+            <classMoniker Id="409fa50d-57f0-4ba5-9c8b-bf3cd15e466c" LastKnownName="SharePointObject" />
+            <elementDefinition Id="0e5c61a8-5b65-4bd6-be15-5ef9e901c4f7" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e702e50c-eae3-471d-99c5-0fa5c62e7a64" name="SharePointLibrary" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e62a3380-0c21-4986-931e-bbb089d02d0e" />
+        <suppliersInternal>
+          <interfaceRealization Id="35e9b432-bbfe-45d2-a042-47adcc87930b">
+            <interfaceMoniker Id="aeccd66b-4fcc-476d-afe2-ab2420a4217f" LastKnownName="ISharePointSiteItem" />
+            <elementDefinition Id="785e9b99-e681-4440-896d-eae79346ae2e" />
+          </interfaceRealization>
+          <interfaceRealization Id="6704f8f7-11fe-4f87-ad4b-f07db9cb2dcd">
+            <interfaceMoniker Id="5686c01a-bfb7-4a31-a55d-2f694cac3be8" LastKnownName="ISharePointExpandableObjcect" />
+            <elementDefinition Id="a5caa357-de36-4420-a21a-81f2930479da" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="3711f8ef-2c05-4a86-9654-4ddfbe959ccc" isSubstitutable="false">
+            <classMoniker Id="409fa50d-57f0-4ba5-9c8b-bf3cd15e466c" LastKnownName="SharePointObject" />
+            <elementDefinition Id="fe0678c3-cb63-4a54-afde-9497580edfcf" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="bff770ae-ca5b-4767-8d43-9ec0b6933a6e" name="SharePointSite" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6051d003-d762-4ca0-ab39-03722b5d6e39" />
+        <suppliersInternal>
+          <interfaceRealization Id="088a2552-8d60-4097-a676-6a722bd5b73d">
+            <interfaceMoniker Id="aeccd66b-4fcc-476d-afe2-ab2420a4217f" LastKnownName="ISharePointSiteItem" />
+            <elementDefinition Id="b93f1d33-a9e7-4143-86c8-b2b080d2eafc" />
+          </interfaceRealization>
+          <interfaceRealization Id="a752716b-6cd4-41d7-abfe-c44475944afd">
+            <interfaceMoniker Id="5686c01a-bfb7-4a31-a55d-2f694cac3be8" LastKnownName="ISharePointExpandableObjcect" />
+            <elementDefinition Id="50ae37cd-07af-47ae-a00a-dc74cc83c16c" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="13828a53-ad2e-4901-b623-32246a827870" isSubstitutable="false">
+            <classMoniker Id="409fa50d-57f0-4ba5-9c8b-bf3cd15e466c" LastKnownName="SharePointObject" />
+            <elementDefinition Id="e68e399f-069f-4387-8c05-792e4f4e6dea" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="13886d35-dbff-4606-ae7f-71bf40941aaa" isDerived="false" sourceEndRoleName="SharePointSite" targetEndRoleName="ISharePointSiteItems" isLeaf="false" isAbstract="false">
+            <interfaceMoniker Id="aeccd66b-4fcc-476d-afe2-ab2420a4217f" LastKnownName="ISharePointSiteItem" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c814dd54-5df4-46ce-91a3-c4347dd88756" name="SharePointSite" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a1cc8e2d-1636-44c8-b7ee-ed54f93e02cb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="de0b42df-714b-44fa-9b28-01c419ebbaf3" name="ISharePointSiteItems" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <lowerValueInternal>
+                    <literalString Id="d6c7bf8c-7e81-4c13-9ade-0bea1efc10c2" name="Lower" value="*">
+                      <elementDefinition Id="a6b20d03-5782-43fd-8e2f-ef6af53aebbf" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="3ca0b8bd-7f5a-495a-8865-0bd5d8022ca9" name="Upper" value="*">
+                      <elementDefinition Id="7b918d8a-57e3-490c-896f-fe99ae8c8f23" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="39faecda-c7da-4d42-9f6d-2d64a5e0ca5e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3f6ed373-98fe-4382-965e-f522bc6bcbb1" />
+          </association>
+          <association Id="3bf4f657-92a0-4d8f-937c-93bbb3a4eb5e" isDerived="false" sourceEndRoleName="SharePointSite" targetEndRoleName="SharePointSite" isLeaf="false" isAbstract="false">
+            <classMoniker Id="bff770ae-ca5b-4767-8d43-9ec0b6933a6e" LastKnownName="SharePointSite" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fc2e26ba-dee5-4267-bf6a-815a4e208a2e" name="SharePointSite" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3639b723-5205-4d50-9e5d-2740eb3231eb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1b1c904e-b7db-44fa-b1ee-1077eff66ae9" name="SharePointSite" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8c081a3c-d8eb-4d96-adc1-78a04de9613a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f0dc34ad-f877-4397-a53e-1df5dda3d4f7" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="6c85f937-cc0b-434a-b8d6-27085442a77a" name="Modeling">
+    <elementDefinition Id="a1b1aee1-f827-4bbf-9daa-c2d3f5fa79b1" />
+  </package>
+</logicalClassDesignerModel>

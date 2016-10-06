@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="29d99884-083a-4e70-85e4-016fb33ce297" name="UMLClassDiagram1" linkedPackageId="7384a1a3-b6c8-4ae5-8ee6-c66d97b449be" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="f821df36-4a10-40c8-9f13-c6243cf68cda">
+      <profileInstance Id="6736e122-baa1-4a04-8826-c3f0614b4c3d" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="c1256797-9ebf-4a23-af0d-4a0673b9f944">
+      <profileInstance Id="0fd6b919-307e-4296-9c16-cdf669eb501c" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6d69a8d1-8a3b-42ad-9979-787fc8775f38" name="SharePointSite" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6051d003-d762-4ca0-ab39-03722b5d6e39" />
+        <suppliersInternal>
+          <interfaceRealization Id="c203fcff-49dc-42ca-aa1f-daf5f56d98a0">
+            <interfaceMoniker Id="f0144beb-72ef-4a28-8252-b55c45a6e0e2" LastKnownName="ISharePointSiteItem" />
+            <elementDefinition Id="b93f1d33-a9e7-4143-86c8-b2b080d2eafc" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association Id="26e1fc3a-a569-4f68-ae76-5b2f07bc279b" isDerived="false" sourceEndRoleName="SharePointSite" targetEndRoleName="ISharePointSiteItems" isLeaf="false" isAbstract="false">
+            <interfaceMoniker Id="f0144beb-72ef-4a28-8252-b55c45a6e0e2" LastKnownName="ISharePointSiteItem" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="530cb65a-b18a-4ddb-a602-ad73f9158f85" name="SharePointSite" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a1cc8e2d-1636-44c8-b7ee-ed54f93e02cb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6577e759-1b25-4c29-8ef3-3f14bf2f98c4" name="ISharePointSiteItems" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <lowerValueInternal>
+                    <literalString Id="0d3545a3-40ea-49f1-8182-2b8901513f19" name="Lower" value="*">
+                      <elementDefinition Id="a6b20d03-5782-43fd-8e2f-ef6af53aebbf" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="ea292749-7055-4079-b9b5-b993e9b8e38a" name="Upper" value="*">
+                      <elementDefinition Id="7b918d8a-57e3-490c-896f-fe99ae8c8f23" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="39faecda-c7da-4d42-9f6d-2d64a5e0ca5e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3f6ed373-98fe-4382-965e-f522bc6bcbb1" />
+          </association>
+          <association Id="cd22fbf4-1589-4bd7-9753-8a840b241a0f" isDerived="false" sourceEndRoleName="SharePointSite" targetEndRoleName="SharePointSite" isLeaf="false" isAbstract="false">
+            <classMoniker Id="6d69a8d1-8a3b-42ad-9979-787fc8775f38" LastKnownName="SharePointSite" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d9dc654e-3147-4ee9-a5f7-3692b5815c76" name="SharePointSite" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3639b723-5205-4d50-9e5d-2740eb3231eb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="83746722-cc4e-47d7-85e8-735757fd40c8" name="SharePointSite" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8c081a3c-d8eb-4d96-adc1-78a04de9613a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f0dc34ad-f877-4397-a53e-1df5dda3d4f7" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="f0144beb-72ef-4a28-8252-b55c45a6e0e2" name="ISharePointSiteItem" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="41c8789b-8f25-4d08-8d3c-09ea022d6a81" />
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="7384a1a3-b6c8-4ae5-8ee6-c66d97b449be" name="Modeling">
+    <elementDefinition Id="a1b1aee1-f827-4bbf-9daa-c2d3f5fa79b1" />
+  </package>
+</logicalClassDesignerModel>

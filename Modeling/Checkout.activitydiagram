@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="037c0327-c1c4-4e8a-a978-44a2e5f81693" name="Checkout" linkedPackageId="898c8aaf-040a-4beb-822f-ed5dc6eafc50" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="6d7e7b1c-4d74-4bb3-8e06-6955b698ff03">
+      <elementDefinition Id="d194fffc-cb7b-4f5d-a6a8-9c583b0a7306" />
+      <body>Check the file was checked out to a user?</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="b7fd73de-aa98-4bad-b78a-647c06324e24" LastKnownName="CheckoutToUser" />
+      </annotatedElements>
+    </comment>
+    <comment Id="a312967a-05af-40c6-9e67-ecdfb646d342">
+      <elementDefinition Id="68ab44da-a45f-4d27-a96e-9a123d45e8bf" />
+      <body>Check the file was checked out to current user?</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="48bbfb20-3547-4635-b86f-7032a524207b" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="02226bfa-c3c5-4cc5-874d-b47275b9f8e0">
+      <profileInstance Id="d9895669-ea6c-4d4a-baae-8370a47b8f54" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="3522f39b-c5ae-4e44-b534-3e14d043b1b7">
+      <profileInstance Id="61ec50ac-b274-4b43-8eef-5fc9eeb9a4c6" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="1b0bece8-4ec8-45e6-8d0c-551192f1a5ba" name="Checkout" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="9b2d21a2-219a-4978-8692-0b74300ba408" />
+        <nodes>
+          <initialNode Id="9af014e8-ecbb-4331-9666-0e2c1d7ae680" name="Initial1" isLeaf="false">
+            <elementDefinition Id="b2bf7784-f9ec-4eb0-b66c-6f5e6ab350a1" />
+            <flowNodeTargets>
+              <controlFlow Id="e94af0a0-b6f9-4bd9-a15e-a52806c19e58" isLeaf="false">
+                <opaqueActionMoniker Id="b8d90729-1fb1-452c-92bc-a048d7652135" LastKnownName="Choose file" />
+                <elementDefinition Id="946990d9-0c61-41dc-b1e8-b88d96458755" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <decisionNode Id="b7fd73de-aa98-4bad-b78a-647c06324e24" name="CheckoutToUser" isLeaf="false">
+            <description>Checkout to a user?</description>
+            <elementDefinition Id="3c1b2e2f-dfd2-4da9-bbaf-46c1957b3de3" />
+            <flowNodeTargets>
+              <controlFlow Id="a049609b-3626-4c5c-9875-62938563924f" guard="N" isLeaf="false">
+                <opaqueActionMoniker Id="dcf1b430-6d77-4f43-ac07-9dfd7eded68a" LastKnownName="Checkout" />
+                <elementDefinition Id="c2120ca0-1e2a-4082-8288-31dcf0fb9128" />
+              </controlFlow>
+              <controlFlow Id="322c5ac9-5d05-4a45-8552-68aa57636d99" guard="Y" isLeaf="false">
+                <decisionNodeMoniker Id="48bbfb20-3547-4635-b86f-7032a524207b" LastKnownName="Decision1" />
+                <elementDefinition Id="0ae3a01f-27a2-4437-a2e8-2af51eff8bd1" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="dcf1b430-6d77-4f43-ac07-9dfd7eded68a" name="Checkout" isLeaf="false">
+            <elementDefinition Id="4f56b753-3d95-47b9-b39c-3cf745a0bb35" />
+            <flowNodeTargets>
+              <controlFlow Id="d49ea383-ca5e-423f-83d3-9e95b0edaa77" isLeaf="false">
+                <opaqueActionMoniker Id="b731d40b-17d9-4644-b73d-fed3407392c7" LastKnownName="Check out success" />
+                <elementDefinition Id="579d0b64-353b-4aad-92b5-2ce219f35022" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="48bbfb20-3547-4635-b86f-7032a524207b" name="Decision1" isLeaf="false">
+            <elementDefinition Id="69c17871-a78a-443f-bb10-4067a763b9ea" />
+            <flowNodeTargets>
+              <controlFlow Id="dbdb2491-e1a7-4b04-accf-d19f0e5b9030" guard="N" isLeaf="false">
+                <opaqueActionMoniker Id="659b0e57-9677-4528-8391-59b9c6dcb19d" LastKnownName="Checkout Fail" />
+                <elementDefinition Id="f40b7570-729c-4623-9d4e-5074a1180e51" />
+              </controlFlow>
+              <controlFlow Id="91b6fdc1-7a4a-49c8-a1bb-a96f7ec16e7d" isLeaf="false">
+                <opaqueActionMoniker Id="b731d40b-17d9-4644-b73d-fed3407392c7" LastKnownName="Check out success" />
+                <elementDefinition Id="fd0f1a2f-a1ed-43b6-a9b6-2b7d94737aa6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode Id="3a49cda4-115e-47fc-8dc1-4edbd0b824ed" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="ad5b6905-a199-4143-9634-301107d247bc" />
+          </activityFinalNode>
+          <opaqueAction Id="659b0e57-9677-4528-8391-59b9c6dcb19d" name="Checkout Fail" isLeaf="false">
+            <elementDefinition Id="cb7a7039-57c8-4972-ad4e-9c387cd652f7" />
+            <flowNodeTargets>
+              <controlFlow Id="d4297c10-3155-481a-868c-46d114359045" isLeaf="false">
+                <activityFinalNodeMoniker Id="3a49cda4-115e-47fc-8dc1-4edbd0b824ed" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="4240b7e5-0d2b-44b9-be2e-9686530c91c1" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="b731d40b-17d9-4644-b73d-fed3407392c7" name="Check out success" isLeaf="false">
+            <elementDefinition Id="38e0ca67-3178-413c-a4d4-c3060625fa50" />
+            <flowNodeTargets>
+              <controlFlow Id="a15ebeb5-8d75-41d8-9dc5-cf392a0902ed" isLeaf="false">
+                <activityFinalNodeMoniker Id="3a49cda4-115e-47fc-8dc1-4edbd0b824ed" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="cf5bb4d9-4775-4ecc-ad98-f4acef436946" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="b8d90729-1fb1-452c-92bc-a048d7652135" name="Choose file" isLeaf="false">
+            <elementDefinition Id="790fbcdf-8446-452c-a00e-8025070af551" />
+            <flowNodeTargets>
+              <controlFlow Id="8920b8f8-528d-44a2-9032-d7ca29c9f39a" isLeaf="false">
+                <decisionNodeMoniker Id="b7fd73de-aa98-4bad-b78a-647c06324e24" LastKnownName="CheckoutToUser" />
+                <elementDefinition Id="5049e13e-7009-4ac0-a0dc-fe2cb398e456" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="898c8aaf-040a-4beb-822f-ed5dc6eafc50" name="Modeling">
+    <elementDefinition Id="a1b1aee1-f827-4bbf-9daa-c2d3f5fa79b1" />
+  </package>
+</activityRootModel>

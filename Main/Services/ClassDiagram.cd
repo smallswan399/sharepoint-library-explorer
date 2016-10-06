@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Main.Services.Domains.SharePointFile">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAASAAAAAAIAAABAoAAAAIQAAAAAAIAAAAEAAAAAAQI=</HashCode>
+      <FileName>Services\Domains\SharePointFile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Main.Services.Domains.SharePointFolder" Collapsed="true">
+    <Position X="8.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAASAAAAAAIgAEBAIACAAAQAAAAAAIAAAAAAAAAAAQI=</HashCode>
+      <FileName>Services\Domains\SharePointFolder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Main.Services.Domains.SharePointFileVersion">
+    <Position X="4.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgBAAAAAAAAAAAAAAAAQAAAAAAAAAAAE=</HashCode>
+      <FileName>Services\Domains\SharePointFileVersion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

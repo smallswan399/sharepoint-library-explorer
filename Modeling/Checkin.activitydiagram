@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="da36152d-ea54-4867-a709-d52a1d067988" name="Checkin" linkedPackageId="00580478-0519-40e3-97f0-111b20e24f33" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="26490a62-4484-4d39-bdd8-7785a185f3e9">
+      <elementDefinition Id="e89a3175-de09-4745-a907-28fe92b9a984" />
+      <body>Checked out to current user?</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="19902f0a-cfe7-43d3-b667-c0d419305cdf" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="c194ed27-ae6e-409b-8259-984fd98712be" name="Checkin" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="c0983fcf-daab-4104-a6a4-9945403dedf6" />
+        <nodes>
+          <initialNode Id="e8d3e387-3af4-4388-8fae-76314476427c" name="Initial1" isLeaf="false">
+            <elementDefinition Id="8dbf0cd5-bd97-4452-89de-4975af0e2c69" />
+            <flowNodeTargets>
+              <controlFlow Id="1e68db96-7abb-442a-b32f-74993335f5cc" isLeaf="false">
+                <opaqueActionMoniker Id="5812b63b-d661-4641-aa30-5f7cde079a5d" LastKnownName="Select file" />
+                <elementDefinition Id="96ef3343-06be-4bdb-8c97-796b20abb697" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="5812b63b-d661-4641-aa30-5f7cde079a5d" name="Select file" isLeaf="false">
+            <elementDefinition Id="4798c1f0-955a-4c84-8721-e29533c25b5d" />
+            <flowNodeTargets>
+              <controlFlow Id="692f7662-321b-4278-899f-2eae163bc4bf" isLeaf="false">
+                <decisionNodeMoniker Id="19902f0a-cfe7-43d3-b667-c0d419305cdf" LastKnownName="Decision1" />
+                <elementDefinition Id="b68e2c34-6187-4171-b996-390025ea2607" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="19902f0a-cfe7-43d3-b667-c0d419305cdf" name="Decision1" isLeaf="false">
+            <elementDefinition Id="7f63ef39-837b-4592-a9c2-8eafd75de70c" />
+            <flowNodeTargets>
+              <controlFlow Id="06d90f3e-b0f2-45cb-b6de-4a2139cb0aee" guard="Y" isLeaf="false">
+                <opaqueActionMoniker Id="27cd008a-36fd-4ff7-84db-c37f9da3559a" LastKnownName="Check in" />
+                <elementDefinition Id="b8b94c26-05c5-4581-a0aa-01eeecbd4c8c" />
+              </controlFlow>
+              <controlFlow Id="7eae5b22-69d3-4703-ae2f-540cf39c0570" guard="N" isLeaf="false">
+                <opaqueActionMoniker Id="1632a72a-0a51-4063-a8bf-fe952a4276b7" LastKnownName="Return result" />
+                <elementDefinition Id="15f71a44-a1a8-4c16-977f-41fbf3ba9434" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="27cd008a-36fd-4ff7-84db-c37f9da3559a" name="Check in" isLeaf="false">
+            <elementDefinition Id="706479b3-2b78-4c24-964d-78dddd326be1" />
+            <flowNodeTargets>
+              <controlFlow Id="3dbaa632-f67f-4df0-976a-57a03529b6f7" isLeaf="false">
+                <opaqueActionMoniker Id="1632a72a-0a51-4063-a8bf-fe952a4276b7" LastKnownName="Return result" />
+                <elementDefinition Id="2683ac8e-35c3-4f92-80cd-d515df1f003f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="303b89ed-19fe-4e3c-9cde-732601594c93" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="f1b93fd4-b534-4518-8b3f-b68593fac3cb" />
+          </activityFinalNode>
+          <opaqueAction Id="1632a72a-0a51-4063-a8bf-fe952a4276b7" name="Return result" isLeaf="false">
+            <elementDefinition Id="9c52f537-f078-4dd0-a0a1-445c1414560d" />
+            <flowNodeTargets>
+              <controlFlow Id="909062db-334e-4ede-b18f-98e82cebace8" isLeaf="false">
+                <activityFinalNodeMoniker Id="303b89ed-19fe-4e3c-9cde-732601594c93" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="ac26dfa3-19ea-47b3-b983-446a189b2e2a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="00580478-0519-40e3-97f0-111b20e24f33" name="Modeling">
+    <elementDefinition Id="a1b1aee1-f827-4bbf-9daa-c2d3f5fa79b1" />
+    <profileInstances>
+      <packageHasProfileInstances Id="231bf163-483b-4aba-b631-6d72ca2d4aba">
+        <profileInstance Id="fcfbd3ed-3f63-47ac-b590-b0a06a655f2b" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="bc87593f-0bef-4c1a-8086-6511cd9ea555">
+        <profileInstance Id="dec35599-aa0d-4631-a877-1cc5ccf03142" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

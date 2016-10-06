@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="6d785789-f06d-4f17-8d45-8aaa8e493b87" name="Upload" linkedPackageId="2ee1b887-e471-4189-9650-bbcca54a715a" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="c3fc128f-9707-409d-88b7-7c4f62853ad7" name="Upload" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="3e145482-0a8d-4e28-a8db-2e57f87fb85c" />
+        <nodes>
+          <initialNode Id="be626700-2098-4b2c-9249-643318d13993" name="Initial1" isLeaf="false">
+            <elementDefinition Id="3d4fb9ef-5b5e-4f54-8e06-ca979b125aa3" />
+            <flowNodeTargets>
+              <controlFlow Id="78e4a03f-f6c4-43ad-9d89-609d5e12d8e6" isLeaf="false">
+                <opaqueActionMoniker Id="adfea805-1ec8-4575-9da0-c7826cb97a37" LastKnownName="Choose file from local" />
+                <elementDefinition Id="8fb85755-17ed-43e7-bb96-68d37e7880b9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="adfea805-1ec8-4575-9da0-c7826cb97a37" name="Choose file from local" isLeaf="false">
+            <elementDefinition Id="79f6b220-0384-45a2-99d1-b63d6fa43975" />
+            <flowNodeTargets>
+              <controlFlow Id="a0ffd02f-c8c9-48b7-94b7-7dad2a53f438" isLeaf="false">
+                <decisionNodeMoniker Id="364e501e-f466-4440-b6bd-f870a7b8a0ca" LastKnownName="Decision4" />
+                <elementDefinition Id="f13ec86c-8533-475c-b870-8ea445db7643" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="a0072e70-07b9-4beb-8754-8e95cf86d869" name="Decision1" isLeaf="false">
+            <elementDefinition Id="ce9962ea-4ebf-4462-9845-8aea86b5ade1" />
+            <flowNodeTargets>
+              <controlFlow Id="3a9acfe0-a1af-4d8e-80e1-9a5ff9a0179b" guard="Checked out to current user" isLeaf="false">
+                <opaqueActionMoniker Id="c1f637e5-caed-4317-b6fb-1b8a0239e172" LastKnownName="Upload file" />
+                <elementDefinition Id="b57581f3-eff1-4234-a7ce-a9860a8fef5a" />
+              </controlFlow>
+              <controlFlow Id="d8f175d0-df04-4564-81bb-6f4c48a11898" guard="Not yet checked out to current user" isLeaf="false">
+                <callBehaviorActionMoniker Id="3a32d899-f185-4290-b510-6cb5fac0d2ad" LastKnownName="Checkout" />
+                <elementDefinition Id="734a9d92-71c7-4750-8dd7-feed3f112c28" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="c1f637e5-caed-4317-b6fb-1b8a0239e172" name="Upload file" isLeaf="false">
+            <elementDefinition Id="dfd303ab-d409-46bf-bc64-7bbad0bb470d" />
+            <flowNodeTargets>
+              <controlFlow Id="c1fd759f-6414-4817-9370-7c3b0113e472" isLeaf="false">
+                <decisionNodeMoniker Id="d95161b3-06fa-40cc-88d8-84b19fac3b78" LastKnownName="Decision3" />
+                <elementDefinition Id="2cd436e9-0fc1-4576-9751-95409b471b60" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="825d1cc4-af3c-4cd4-a122-fe2334c8751d" name="Decision2" isLeaf="false">
+            <elementDefinition Id="890f11f9-310f-4b28-b9dc-0a7d3ba78f10" />
+            <flowNodeTargets>
+              <controlFlow Id="1eaf1078-6650-458a-b54a-64f158e85f5d" guard="Check out success" isLeaf="false">
+                <opaqueActionMoniker Id="c1f637e5-caed-4317-b6fb-1b8a0239e172" LastKnownName="Upload file" />
+                <elementDefinition Id="8bffd286-e17e-4e99-96e3-29c7b4c917d0" />
+              </controlFlow>
+              <controlFlow Id="66cf2eb9-b302-4472-8b9d-9395fb56a009" guard="Checkout failse" isLeaf="false">
+                <opaqueActionMoniker Id="01d92bc9-9584-4354-880a-48fdbccda904" LastKnownName="Return result" />
+                <elementDefinition Id="32235034-b2c5-4213-b191-88bdccc1f914" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode Id="08010e09-6c3a-4d65-9c78-94b6e45aeb6b" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="d12e148e-95e8-43b0-8174-3661bdd03af3" />
+          </activityFinalNode>
+          <callBehaviorAction Id="3a32d899-f185-4290-b510-6cb5fac0d2ad" name="Checkout" isLeaf="false">
+            <elementDefinition Id="ca99310f-5938-4bb6-825c-96dddc6aca9f" />
+            <flowNodeTargets>
+              <controlFlow Id="8f806745-a95b-40ee-bbe0-506680fb7672" isLeaf="false">
+                <decisionNodeMoniker Id="825d1cc4-af3c-4cd4-a122-fe2334c8751d" LastKnownName="Decision2" />
+                <elementDefinition Id="3d062574-1760-4e1d-9657-e85bb2cd335d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </callBehaviorAction>
+          <opaqueAction Id="01d92bc9-9584-4354-880a-48fdbccda904" name="Return result" isLeaf="false">
+            <elementDefinition Id="1291fe19-5cfa-46b2-8e4f-419e2b87c636" />
+            <flowNodeTargets>
+              <controlFlow Id="f81e723e-49c6-40ee-abe4-64fe16ecf9c4" isLeaf="false">
+                <activityFinalNodeMoniker Id="08010e09-6c3a-4d65-9c78-94b6e45aeb6b" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="53c68239-0fa5-4af5-b57e-f660d4210729" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="d95161b3-06fa-40cc-88d8-84b19fac3b78" name="Decision3" isLeaf="false">
+            <elementDefinition Id="f13e5ec0-d456-40d2-b11b-f86222f0005f" />
+            <flowNodeTargets>
+              <controlFlow Id="f74cf04d-ba26-485f-8b0a-35155e290b1f" guard="Not require check out before edit" isLeaf="false">
+                <opaqueActionMoniker Id="01d92bc9-9584-4354-880a-48fdbccda904" LastKnownName="Return result" />
+                <elementDefinition Id="5fd509d6-f5c5-4b03-9a47-9d2ea8596db8" />
+              </controlFlow>
+              <controlFlow Id="2fd58813-492f-41a4-8f8b-f81fed769387" guard="Require check out before edit" isLeaf="false">
+                <callBehaviorActionMoniker Id="7b678d67-6dac-47f4-99b8-64e735856581" LastKnownName="Check in" />
+                <elementDefinition Id="00d81bb9-00f4-4e33-ab6f-7d340cb8b3a4" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <callBehaviorAction Id="7b678d67-6dac-47f4-99b8-64e735856581" name="Check in" isLeaf="false">
+            <elementDefinition Id="52f61fb7-b402-4b50-8c3f-4d782a072c49" />
+            <flowNodeTargets>
+              <controlFlow Id="2d161802-ecb0-4b78-9c58-5d71f8e10fa1" isLeaf="false">
+                <opaqueActionMoniker Id="01d92bc9-9584-4354-880a-48fdbccda904" LastKnownName="Return result" />
+                <elementDefinition Id="ac21511b-25e0-41a5-8e61-03a4db143ff6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </callBehaviorAction>
+          <decisionNode Id="364e501e-f466-4440-b6bd-f870a7b8a0ca" name="Decision4" isLeaf="false">
+            <elementDefinition Id="acec7239-ff81-42e3-b367-134bf63e2a45" />
+            <flowNodeTargets>
+              <controlFlow Id="4a7b5e58-3472-47b4-8d18-b04a623c9157" guard="Not Exist" isLeaf="false">
+                <opaqueActionMoniker Id="c1f637e5-caed-4317-b6fb-1b8a0239e172" LastKnownName="Upload file" />
+                <elementDefinition Id="708f4962-439b-4c46-bf6b-7e0d0b43ad58" />
+              </controlFlow>
+              <controlFlow Id="536d3ed4-1273-4c82-9528-e516a5d92713" guard="Exist" isLeaf="false">
+                <decisionNodeMoniker Id="5f30befc-59e1-4017-84f2-c3ea0fc22444" LastKnownName="Decision5" />
+                <elementDefinition Id="16660643-cdb9-4e3e-b478-2e54556cd4ad" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode Id="5f30befc-59e1-4017-84f2-c3ea0fc22444" name="Decision5" isLeaf="false">
+            <elementDefinition Id="c2033632-d634-4f1b-85e0-1e8962759ed6" />
+            <flowNodeTargets>
+              <controlFlow Id="d1586b89-f05b-4228-a477-0e1fa047b795" guard="Require check out before edit" isLeaf="false">
+                <decisionNodeMoniker Id="a0072e70-07b9-4beb-8754-8e95cf86d869" LastKnownName="Decision1" />
+                <elementDefinition Id="0505636d-9330-42e3-96a2-3052bca9cbba" />
+              </controlFlow>
+              <controlFlow Id="3cc0b3a6-992c-4d60-a34e-925bb4108561" guard="Not require check out before edit" isLeaf="false">
+                <opaqueActionMoniker Id="c1f637e5-caed-4317-b6fb-1b8a0239e172" LastKnownName="Upload file" />
+                <elementDefinition Id="5888895e-84e3-4b5c-b6fa-c3823656b2a8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="2ee1b887-e471-4189-9650-bbcca54a715a" name="Modeling">
+    <elementDefinition Id="a1b1aee1-f827-4bbf-9daa-c2d3f5fa79b1" />
+    <profileInstances>
+      <packageHasProfileInstances Id="68259650-0b5e-4cda-8d73-8e8d57895242">
+        <profileInstance Id="5e7c9912-191c-4592-bde2-da511bb25a4d" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="615ba8bf-aae6-46b6-a591-ee8864b63697">
+        <profileInstance Id="56da4d29-d86c-4b6d-84d4-538a5be30a02" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

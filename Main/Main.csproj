@@ -1,0 +1,605 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7A41A9DC-6CA4-441B-AB9D-DC616D431E99}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Main</RootNamespace>
+    <AssemblyName>lcp_dmsstexp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommandLine, Version=1.9.71.2, Culture=neutral, PublicKeyToken=de6f01bd326f8c32, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommandLineParser.1.9.71\lib\net45\CommandLine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Sharepoint.2013.Client.16.1.0.0\lib\Microsoft.SharePoint.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Sharepoint.2013.Client.16.1.0.0\lib\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ookii.Dialogs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0c15020868fd6249, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ookii.Dialogs.WindowsForms.1.0\lib\net35\Ookii.Dialogs.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RGiesecke.DllExport.Metadata, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8f52d83c1a22df51, processorArchitecture=MSIL">
+      <HintPath>..\packages\UnmanagedExports.1.2.7\lib\net\RGiesecke.DllExport.Metadata.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\CmdParameters.cs" />
+    <Compile Include="CrudModel.cs" />
+    <Compile Include="DialogHelper.cs" />
+    <Compile Include="ErrorDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InputData.cs" />
+    <Compile Include="Libs\AsyncTask.cs" />
+    <Compile Include="Libs\ErrorTracker.cs" />
+    <Compile Include="Libs\ListViewExtensions.cs" />
+    <Compile Include="NativeExports.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Repos\Data.cs" />
+    <Compile Include="Repos\OldSchemaRepoProvider.cs" />
+    <Compile Include="Repos\RegistryRepoProvider.cs" />
+    <Compile Include="Service References\SiteDataServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SitesServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UserProfileServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Version2010ServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\VersionServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\CopyActionResult.cs" />
+    <Compile Include="Services\Domains\ISharePointFileContainer.cs" />
+    <Compile Include="Services\ErrorCode.cs" />
+    <Compile Include="Services\Serializations\ListDetails.cs" />
+    <Compile Include="Services\Serializations\Version.cs" />
+    <Compile Include="Services\SharePoint2010ServiceClientObjModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services\SharePointOnlineService.cs" />
+    <Compile Include="Services\SharePointService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserControls\FileListViewColumnComparer.cs" />
+    <Compile Include="UserControls\FileListViewColumns.cs" />
+    <Compile Include="UserControls\HistoryFileListViewColumnComparer.cs" />
+    <Compile Include="UserControls\HistoryFileListViewColumns.cs" />
+    <Compile Include="ViewModels\SharePointAuthenticationOptionComboBoxListItem.cs" />
+    <Compile Include="ViewModels\SharePointServerVersionListBoxItem.cs" />
+    <Compile Include="ViewModels\SiteDetails.cs" />
+    <Compile Include="ViewModels\SiteListItem.cs" />
+    <Compile Include="FormAction.cs" />
+    <Compile Include="Repos\IRepoProvider.cs" />
+    <Compile Include="Repos\IRepository.cs" />
+    <Compile Include="Repos\ISiteRepository.cs" />
+    <Compile Include="Service References\Copy2010ServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CopyServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\List2010ServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ListServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Web2010ServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WebServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Domains\ISharePointExpandableObjcect.cs" />
+    <Compile Include="Services\Domains\ISharePointFile.cs" />
+    <Compile Include="Services\Domains\ISharePointLibraryItem.cs" />
+    <Compile Include="Services\Domains\ISharePointObject.cs" />
+    <Compile Include="Services\Domains\ISharePointSiteItem.cs" />
+    <Compile Include="Services\Domains\SharePointFile.cs" />
+    <Compile Include="Services\Domains\SharePointFileVersion.cs" />
+    <Compile Include="Services\Domains\SharePointFolder.cs" />
+    <Compile Include="Services\Domains\SharePointLibrary.cs" />
+    <Compile Include="Services\Domains\SharePointObject.cs" />
+    <Compile Include="Services\Domains\SharePointSite.cs" />
+    <Compile Include="Services\ISharePointService.cs" />
+    <Compile Include="Services\Serializations\List.cs" />
+    <Compile Include="Services\Serializations\ListItem2007.cs" />
+    <Compile Include="Services\Serializations\Web.cs" />
+    <Compile Include="Services\SharePoint2007Service.cs" />
+    <Compile Include="Services\SharepointServiceProvider.cs" />
+    <Compile Include="Services\SiteSoapClientMapper.cs" />
+    <Compile Include="Services\SoapClient2007Repo.cs" />
+    <Compile Include="Services\SoapClient2010Repo.cs" />
+    <Compile Include="Services\TryConnectResult.cs" />
+    <Compile Include="SitesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SitesForm.Designer.cs">
+      <DependentUpon>SitesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repos\RepoProvider.cs" />
+    <Compile Include="Repos\SiteRepository.cs" />
+    <Compile Include="UserControls\FileVersionListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\FilesListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\FilesListViewItem.cs" />
+    <Compile Include="UserControls\SiteNodeTreeNode.cs" />
+    <Compile Include="UserControls\TreeNodeType.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\MapperConfig.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SiteDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SiteDetailsForm.Designer.cs">
+      <DependentUpon>SiteDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\UserProfileService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WindowWrapper.cs" />
+    <Content Include="about.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Service References\SiteDataServiceReference\Main.SiteDataServiceReference.ArrayOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiteDataServiceReference\Main.SiteDataServiceReference._sFPUrl.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiteDataServiceReference\Main.SiteDataServiceReference._sList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiteDataServiceReference\Main.SiteDataServiceReference._sListMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiteDataServiceReference\Main.SiteDataServiceReference._sListWithTime.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiteDataServiceReference\Main.SiteDataServiceReference._sProperty.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiteDataServiceReference\Main.SiteDataServiceReference._sSiteMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiteDataServiceReference\Main.SiteDataServiceReference._sWebMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiteDataServiceReference\Main.SiteDataServiceReference._sWebWithTime.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SiteDataServiceReference\SiteData.wsdl" />
+    <None Include="Service References\SitesServiceReference\Main.SitesServiceReference.Template.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SitesServiceReference\sites.wsdl" />
+    <None Include="Web References\UserProfileService\ContactData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UserProfileService\GetUserProfileByIndexResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UserProfileService\InCommonData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UserProfileService\MembershipData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UserProfileService\PinnedLinkData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UserProfileService\PropertyData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UserProfileService\PropertyInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UserProfileService\QuickLinkData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\UserProfileService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\UserProfileService\userprofileservice.disco" />
+    <None Include="Service References\UserProfileServiceReference\Main.UserProfileServiceReference.ArrayOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserProfileServiceReference\Main.UserProfileServiceReference.ContactData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserProfileServiceReference\Main.UserProfileServiceReference.GetUserProfileByIndexResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserProfileServiceReference\Main.UserProfileServiceReference.InCommonData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserProfileServiceReference\Main.UserProfileServiceReference.MembershipData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserProfileServiceReference\Main.UserProfileServiceReference.PinnedLinkData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserProfileServiceReference\Main.UserProfileServiceReference.PropertyData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserProfileServiceReference\Main.UserProfileServiceReference.PropertyInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserProfileServiceReference\Main.UserProfileServiceReference.QuickLinkData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserProfileServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\UserProfileServiceReference\configuration.svcinfo" />
+    <None Include="Service References\UserProfileServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\UserProfileServiceReference\userprofileservice.disco" />
+    <None Include="Service References\UserProfileServiceReference\userprofileservice.wsdl" />
+    <None Include="Service References\Version2010ServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Version2010ServiceReference\configuration.svcinfo" />
+    <None Include="Service References\Version2010ServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\Version2010ServiceReference\Versions.disco" />
+    <None Include="Service References\Version2010ServiceReference\Versions.wsdl" />
+    <None Include="Service References\VersionServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\VersionServiceReference\configuration.svcinfo" />
+    <None Include="Service References\VersionServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\VersionServiceReference\Versions.disco" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SitesForm.resx">
+      <DependentUpon>SitesForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SiteDetailsForm.resx">
+      <DependentUpon>SiteDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\System.Xml.Linq.XElement.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\Copy2010ServiceReference\copy.wsdl" />
+    <None Include="Service References\Copy2010ServiceReference\Main.Copy2010ServiceReference.CopyResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Copy2010ServiceReference\Main.Copy2010ServiceReference.FieldInformation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CopyServiceReference\copy.wsdl" />
+    <None Include="Service References\CopyServiceReference\Main.CopyServiceReference.CopyResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CopyServiceReference\Main.CopyServiceReference.FieldInformation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\List2010ServiceReference\Lists.wsdl" />
+    <None Include="Service References\ListServiceReference\Lists.wsdl" />
+    <None Include="Service References\VersionServiceReference\Versions.wsdl" />
+    <None Include="Service References\Web2010ServiceReference\Main.Web2010ServiceReference.CustomizedPageStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Web2010ServiceReference\webs.wsdl" />
+    <None Include="Service References\WebServiceReference\Main.WebServiceReference.CustomizedPageStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebServiceReference\webs.wsdl" />
+    <None Include="Services\ClassDiagram.cd" />
+    <None Include="Web References\UserProfileService\userprofileservice.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.ico" />
+    <None Include="Service References\SiteDataServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SiteDataServiceReference\configuration.svcinfo" />
+    <None Include="Service References\SiteDataServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\SiteDataServiceReference\SiteData.disco" />
+    <None Include="Service References\SitesServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SitesServiceReference\configuration.svcinfo" />
+    <None Include="Service References\SitesServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\SitesServiceReference\sites.disco" />
+    <None Include="Service References\Copy2010ServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Copy2010ServiceReference\configuration.svcinfo" />
+    <None Include="Service References\Copy2010ServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\Copy2010ServiceReference\copy.disco" />
+    <None Include="Service References\List2010ServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\List2010ServiceReference\configuration.svcinfo" />
+    <None Include="Service References\List2010ServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\List2010ServiceReference\Lists.disco" />
+    <None Include="Service References\Web2010ServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Web2010ServiceReference\configuration.svcinfo" />
+    <None Include="Service References\Web2010ServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\Web2010ServiceReference\webs.disco" />
+    <None Include="Service References\CopyServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\CopyServiceReference\configuration.svcinfo" />
+    <None Include="Service References\CopyServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\CopyServiceReference\copy.disco" />
+    <None Include="Service References\WebServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WebServiceReference\configuration.svcinfo" />
+    <None Include="Service References\WebServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\WebServiceReference\webs.disco" />
+    <None Include="Service References\ListServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ListServiceReference\configuration.svcinfo" />
+    <None Include="Service References\ListServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\ListServiceReference\Lists.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Copy2010ServiceReference\" />
+    <WCFMetadataStorage Include="Service References\CopyServiceReference\" />
+    <WCFMetadataStorage Include="Service References\List2010ServiceReference\" />
+    <WCFMetadataStorage Include="Service References\ListServiceReference\" />
+    <WCFMetadataStorage Include="Service References\SiteDataServiceReference\" />
+    <WCFMetadataStorage Include="Service References\SitesServiceReference\" />
+    <WCFMetadataStorage Include="Service References\UserProfileServiceReference\" />
+    <WCFMetadataStorage Include="Service References\Version2010ServiceReference\" />
+    <WCFMetadataStorage Include="Service References\VersionServiceReference\" />
+    <WCFMetadataStorage Include="Service References\Web2010ServiceReference\" />
+    <WCFMetadataStorage Include="Service References\WebServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://win-qmr53o3594d/_vti_bin/userprofileservice.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\UserProfileService\</RelPath>
+      <UpdateFromURL>http://win-qmr53o3594d/_vti_bin/userprofileservice.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>lcp_dmsst_UserProfileService_UserProfileService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{cce1cbdd-e2cb-43bf-affb-444fbafcf8c3}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{fe4f9d45-661c-4508-a70e-5abafaa26256}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extensions\Extensions.csproj">
+      <Project>{d40c5a2f-f7a4-43b0-ab50-4d4eee371b85}</Project>
+      <Name>Extensions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <Import Project="../packages/UnmanagedExports.1.2.7/tools/RGiesecke.DllExport.targets" Condition="Exists('../packages/UnmanagedExports.1.2.7/tools/RGiesecke.DllExport.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

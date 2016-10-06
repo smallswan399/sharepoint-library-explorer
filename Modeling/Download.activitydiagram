@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="50d13705-76f8-43cc-ab00-2a8918418a46" name="Download" linkedPackageId="a6176a20-6c25-4c8b-896d-187f1d6de6b9" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="f335778c-0a5e-4f94-a632-c14edddc470f">
+      <elementDefinition Id="446550a7-8022-4172-ba96-91b8889e5669" />
+      <body>Check out the file, this can be success or failse</body>
+      <annotatedElements>
+        <callBehaviorActionMoniker Id="b62c0a71-170d-499b-b5ad-6213f72a294d" LastKnownName="CheckOut" />
+      </annotatedElements>
+    </comment>
+    <comment Id="d331cb13-a86a-4d31-a51c-bac428f8770d">
+      <elementDefinition Id="8839e299-e0c2-400e-9af3-1ec0fe6e8274" />
+      <body>Not need to check out  before download file</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="bb15ef73-1eb5-4bec-8c91-17f13771828c" name="Download" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="84d0d463-3bde-4d7b-8d2f-ce2dd79836a7" />
+        <nodes>
+          <initialNode Id="a966aea3-6baf-4326-91be-22cb1eaef6bd" name="Initial1" isLeaf="false">
+            <elementDefinition Id="29677b13-907e-4297-a3a9-ea94650ab232" />
+            <flowNodeTargets>
+              <controlFlow Id="3ed39714-fb05-40ef-a54f-c98c85a33219" isLeaf="false">
+                <opaqueActionMoniker Id="bc3a2727-11ef-4366-adf5-1e6d2b104adc" LastKnownName="Choose file" />
+                <elementDefinition Id="0069af79-4eaa-4265-a6c5-97db83d8cae7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <callBehaviorAction Id="b62c0a71-170d-499b-b5ad-6213f72a294d" name="CheckOut" isLeaf="false">
+            <elementDefinition Id="06898694-136f-4c55-9185-d7be5801b5fa" />
+          </callBehaviorAction>
+          <opaqueAction Id="bc3a2727-11ef-4366-adf5-1e6d2b104adc" name="Choose file" isLeaf="false">
+            <elementDefinition Id="8a42f7e8-31a5-40af-bb7b-6bec661a02ea" />
+            <flowNodeTargets>
+              <controlFlow Id="e2e1f737-61c8-4632-ab7e-62a2325dd82a" isLeaf="false">
+                <opaqueActionMoniker Id="ebcdb5e9-64f8-45d8-85e0-056c474948d6" LastKnownName="Download file" />
+                <elementDefinition Id="2f12d92e-6259-43bf-ac28-6fb7df08d632" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="ebcdb5e9-64f8-45d8-85e0-056c474948d6" name="Download file" isLeaf="false">
+            <elementDefinition Id="a640606d-c572-450f-ba54-e211bd068ac0" />
+            <flowNodeTargets>
+              <controlFlow Id="2762d767-d965-4b8b-af48-52297f82df5d" isLeaf="false">
+                <activityFinalNodeMoniker Id="2135f290-cda9-4f42-a3c6-73f630a3054f" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="d47c307e-2f8b-47a5-828a-95b37438e175" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="2135f290-cda9-4f42-a3c6-73f630a3054f" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="d9ac6183-a671-4ac7-ad6b-ac19a7f3a23e" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="a6176a20-6c25-4c8b-896d-187f1d6de6b9" name="Modeling">
+    <elementDefinition Id="a1b1aee1-f827-4bbf-9daa-c2d3f5fa79b1" />
+    <profileInstances>
+      <packageHasProfileInstances Id="3ccb77e0-713e-4360-bb82-655214b5c507">
+        <profileInstance Id="a8019a24-8e27-4ae7-8bd5-03874d8e3659" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="f9a308f8-b023-46bc-9f39-57aa75cf0188">
+        <profileInstance Id="25e99655-faae-438c-acc2-fef50ff2eb40" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

@@ -1,0 +1,976 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+  dslVersion="1.0.0.0"
+  Id="a1b1aee1-f827-4bbf-9daa-c2d3f5fa79b1"
+  name="Modeling" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="d194fffc-cb7b-4f5d-a6a8-9c583b0a7306">
+      <body>Check the file was checked out to a user?</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="3c1b2e2f-dfd2-4da9-bbaf-46c1957b3de3"
+          LastKnownName="CheckoutToUser"
+          LastKnownLocation="Modeling.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="68ab44da-a45f-4d27-a96e-9a123d45e8bf">
+      <body>Check the file was checked out to current user?</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="69c17871-a78a-443f-bb10-4067a763b9ea"
+          LastKnownName="Decision1"
+          LastKnownLocation="Modeling.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="446550a7-8022-4172-ba96-91b8889e5669">
+      <body>Check out the file, this can be success or failse</body>
+      <annotatedElements>
+        <callBehaviorActionMoniker
+          Id="06898694-136f-4c55-9185-d7be5801b5fa"
+          LastKnownName="CheckOut"
+          LastKnownLocation="Modeling.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="e89a3175-de09-4745-a907-28fe92b9a984">
+      <body>Checked out to current user?</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="7f63ef39-837b-4592-a9c2-8eafd75de70c"
+          LastKnownName="Decision1"
+          LastKnownLocation="Modeling.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="8839e299-e0c2-400e-9af3-1ec0fe6e8274">
+      <body>Not need to check out  before download file</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="e7cf5c96-0533-4d25-82a3-9001ecdf44ff"
+        name="SharePointObject"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="b12ee9f5-2a67-411b-84d2-ea665a6b0f5e">
+            <interfaceMoniker
+              Id="1124d719-b19d-49c1-b8d5-26316f9ac9a4"
+              LastKnownName="ISharePointObject"
+              LastKnownLocation="Modeling.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="1124d719-b19d-49c1-b8d5-26316f9ac9a4"
+        name="ISharePointObject"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="41c8789b-8f25-4d08-8d3c-09ea022d6a81"
+        name="ISharePointSiteItem"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="d1adb67b-a649-470c-aeb1-9123709b9a9c"
+            isSubstitutable="false">
+            <interfaceMoniker
+              Id="1124d719-b19d-49c1-b8d5-26316f9ac9a4"
+              LastKnownName="ISharePointObject"
+              LastKnownLocation="Modeling.uml" />
+          </generalization>
+        </generalsInternal>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="4bc34229-ec18-4158-bb66-987be760a244"
+        name="ISharePointLibraryItem"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="39495fd9-b814-42d8-85d3-92fdac2c78c4"
+            isSubstitutable="false">
+            <interfaceMoniker
+              Id="1124d719-b19d-49c1-b8d5-26316f9ac9a4"
+              LastKnownName="ISharePointObject"
+              LastKnownLocation="Modeling.uml" />
+          </generalization>
+        </generalsInternal>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="02303f5d-e573-48e9-9afb-ecb038219925"
+        name="ISharePointExpandableObjcect"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="65fcc1cb-6a62-4a11-a463-04b687d618ca"
+            isSubstitutable="false">
+            <interfaceMoniker
+              Id="1124d719-b19d-49c1-b8d5-26316f9ac9a4"
+              LastKnownName="ISharePointObject"
+              LastKnownLocation="Modeling.uml" />
+          </generalization>
+        </generalsInternal>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="4ad5876a-3276-4d88-940f-d64a21b4c053"
+        name="ISharePointFile"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="b18b7a4f-3a18-473b-9285-dfcc1fc4c690"
+            isSubstitutable="false">
+            <interfaceMoniker
+              Id="1124d719-b19d-49c1-b8d5-26316f9ac9a4"
+              LastKnownName="ISharePointObject"
+              LastKnownLocation="Modeling.uml" />
+          </generalization>
+        </generalsInternal>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2f9e5fd2-df8a-407e-b8f2-ffa07bde8f08"
+        name="SharePointFile"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="4e5620db-aafa-4ce9-85ce-b0f661f6f665">
+            <interfaceMoniker
+              Id="4ad5876a-3276-4d88-940f-d64a21b4c053"
+              LastKnownName="ISharePointFile"
+              LastKnownLocation="Modeling.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="66867a92-aa6b-456e-88a8-557c46b7ec14"
+            isSubstitutable="false">
+            <classMoniker
+              Id="e7cf5c96-0533-4d25-82a3-9001ecdf44ff"
+              LastKnownName="SharePointObject"
+              LastKnownLocation="Modeling.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e88dc243-0423-4b3b-bf04-afa99ca03605"
+        name="SharePointFolder"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="97739467-4f08-420a-bc14-25838f4bce19">
+            <interfaceMoniker
+              Id="4bc34229-ec18-4158-bb66-987be760a244"
+              LastKnownName="ISharePointLibraryItem"
+              LastKnownLocation="Modeling.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="fa5ecc0a-fded-4105-84c6-b30cf8cdcf56">
+            <interfaceMoniker
+              Id="02303f5d-e573-48e9-9afb-ecb038219925"
+              LastKnownName="ISharePointExpandableObjcect"
+              LastKnownLocation="Modeling.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="0e5c61a8-5b65-4bd6-be15-5ef9e901c4f7"
+            isSubstitutable="false">
+            <classMoniker
+              Id="e7cf5c96-0533-4d25-82a3-9001ecdf44ff"
+              LastKnownName="SharePointObject"
+              LastKnownLocation="Modeling.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e62a3380-0c21-4986-931e-bbb089d02d0e"
+        name="SharePointLibrary"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="785e9b99-e681-4440-896d-eae79346ae2e">
+            <interfaceMoniker
+              Id="41c8789b-8f25-4d08-8d3c-09ea022d6a81"
+              LastKnownName="ISharePointSiteItem"
+              LastKnownLocation="Modeling.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="a5caa357-de36-4420-a21a-81f2930479da">
+            <interfaceMoniker
+              Id="02303f5d-e573-48e9-9afb-ecb038219925"
+              LastKnownName="ISharePointExpandableObjcect"
+              LastKnownLocation="Modeling.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="fe0678c3-cb63-4a54-afde-9497580edfcf"
+            isSubstitutable="false">
+            <classMoniker
+              Id="e7cf5c96-0533-4d25-82a3-9001ecdf44ff"
+              LastKnownName="SharePointObject"
+              LastKnownLocation="Modeling.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6051d003-d762-4ca0-ab39-03722b5d6e39"
+        name="SharePointSite"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="b93f1d33-a9e7-4143-86c8-b2b080d2eafc">
+            <interfaceMoniker
+              Id="41c8789b-8f25-4d08-8d3c-09ea022d6a81"
+              LastKnownName="ISharePointSiteItem"
+              LastKnownLocation="Modeling.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="50ae37cd-07af-47ae-a00a-dc74cc83c16c">
+            <interfaceMoniker
+              Id="02303f5d-e573-48e9-9afb-ecb038219925"
+              LastKnownName="ISharePointExpandableObjcect"
+              LastKnownLocation="Modeling.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="e68e399f-069f-4387-8c05-792e4f4e6dea"
+            isSubstitutable="false">
+            <classMoniker
+              Id="e7cf5c96-0533-4d25-82a3-9001ecdf44ff"
+              LastKnownName="SharePointObject"
+              LastKnownLocation="Modeling.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="3f6ed373-98fe-4382-965e-f522bc6bcbb1"
+            isDerived="false"
+            sourceEndRoleName="SharePointSite"
+            targetEndRoleName="ISharePointSiteItems"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="41c8789b-8f25-4d08-8d3c-09ea022d6a81"
+              LastKnownName="ISharePointSiteItem"
+              LastKnownLocation="Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a1cc8e2d-1636-44c8-b7ee-ed54f93e02cb"
+                  name="SharePointSite"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="39faecda-c7da-4d42-9f6d-2d64a5e0ca5e"
+                  name="ISharePointSiteItems"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="a6b20d03-5782-43fd-8e2f-ef6af53aebbf"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="7b918d8a-57e3-490c-896f-fe99ae8c8f23"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="f0dc34ad-f877-4397-a53e-1df5dda3d4f7"
+            isDerived="false"
+            sourceEndRoleName="SharePointSite"
+            targetEndRoleName="SharePointSite"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="6051d003-d762-4ca0-ab39-03722b5d6e39"
+              LastKnownName="SharePointSite"
+              LastKnownLocation="Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3639b723-5205-4d50-9e5d-2740eb3231eb"
+                  name="SharePointSite"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8c081a3c-d8eb-4d96-adc1-78a04de9613a"
+                  name="SharePointSite"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="84d0d463-3bde-4d7b-8d2f-ce2dd79836a7"
+        name="Download"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="29677b13-907e-4297-a3a9-ea94650ab232"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0069af79-4eaa-4265-a6c5-97db83d8cae7"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="8a42f7e8-31a5-40af-bb7b-6bec661a02ea"
+                  LastKnownName="Choose file"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <callBehaviorAction
+            Id="06898694-136f-4c55-9185-d7be5801b5fa"
+            name="CheckOut"
+            isLeaf="false">
+            <behavior>
+              <activityMoniker
+                Id="9b2d21a2-219a-4978-8692-0b74300ba408"
+                LastKnownName="Checkout"
+                LastKnownLocation="Modeling.uml" />
+            </behavior>
+          </callBehaviorAction>
+          <opaqueAction
+            Id="8a42f7e8-31a5-40af-bb7b-6bec661a02ea"
+            name="Choose file"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2f12d92e-6259-43bf-ac28-6fb7df08d632"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a640606d-c572-450f-ba54-e211bd068ac0"
+                  LastKnownName="Download file"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="a640606d-c572-450f-ba54-e211bd068ac0"
+            name="Download file"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d47c307e-2f8b-47a5-828a-95b37438e175"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="d9ac6183-a671-4ac7-ad6b-ac19a7f3a23e"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="d9ac6183-a671-4ac7-ad6b-ac19a7f3a23e"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="9b2d21a2-219a-4978-8692-0b74300ba408"
+        name="Checkout"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="b2bf7784-f9ec-4eb0-b66c-6f5e6ab350a1"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="946990d9-0c61-41dc-b1e8-b88d96458755"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="790fbcdf-8446-452c-a00e-8025070af551"
+                  LastKnownName="Choose file"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <decisionNode
+            Id="3c1b2e2f-dfd2-4da9-bbaf-46c1957b3de3"
+            name="CheckoutToUser"
+            isLeaf="false">
+            <description>Checkout to a user?</description>
+            <flowNodeTargets>
+              <controlFlow
+                Id="c2120ca0-1e2a-4082-8288-31dcf0fb9128"
+                guard="N"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="4f56b753-3d95-47b9-b39c-3cf745a0bb35"
+                  LastKnownName="Checkout"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="0ae3a01f-27a2-4437-a2e8-2af51eff8bd1"
+                guard="Y"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="69c17871-a78a-443f-bb10-4067a763b9ea"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="4f56b753-3d95-47b9-b39c-3cf745a0bb35"
+            name="Checkout"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="579d0b64-353b-4aad-92b5-2ce219f35022"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="38e0ca67-3178-413c-a4d4-c3060625fa50"
+                  LastKnownName="Check out success"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="69c17871-a78a-443f-bb10-4067a763b9ea"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f40b7570-729c-4623-9d4e-5074a1180e51"
+                guard="N"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="cb7a7039-57c8-4972-ad4e-9c387cd652f7"
+                  LastKnownName="Checkout Fail"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="fd0f1a2f-a1ed-43b6-a9b6-2b7d94737aa6"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="38e0ca67-3178-413c-a4d4-c3060625fa50"
+                  LastKnownName="Check out success"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode
+            Id="ad5b6905-a199-4143-9634-301107d247bc"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <opaqueAction
+            Id="cb7a7039-57c8-4972-ad4e-9c387cd652f7"
+            name="Checkout Fail"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4240b7e5-0d2b-44b9-be2e-9686530c91c1"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="ad5b6905-a199-4143-9634-301107d247bc"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="38e0ca67-3178-413c-a4d4-c3060625fa50"
+            name="Check out success"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="cf5bb4d9-4775-4ecc-ad98-f4acef436946"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="ad5b6905-a199-4143-9634-301107d247bc"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="790fbcdf-8446-452c-a00e-8025070af551"
+            name="Choose file"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5049e13e-7009-4ac0-a0dc-fe2cb398e456"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="3c1b2e2f-dfd2-4da9-bbaf-46c1957b3de3"
+                  LastKnownName="CheckoutToUser"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="3e145482-0a8d-4e28-a8db-2e57f87fb85c"
+        name="Upload"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="3d4fb9ef-5b5e-4f54-8e06-ca979b125aa3"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8fb85755-17ed-43e7-bb96-68d37e7880b9"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="79f6b220-0384-45a2-99d1-b63d6fa43975"
+                  LastKnownName="Choose file from local"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="79f6b220-0384-45a2-99d1-b63d6fa43975"
+            name="Choose file from local"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f13ec86c-8533-475c-b870-8ea445db7643"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="acec7239-ff81-42e3-b367-134bf63e2a45"
+                  LastKnownName="Decision4"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="ce9962ea-4ebf-4462-9845-8aea86b5ade1"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b57581f3-eff1-4234-a7ce-a9860a8fef5a"
+                guard="Checked out to current user"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="dfd303ab-d409-46bf-bc64-7bbad0bb470d"
+                  LastKnownName="Upload file"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="734a9d92-71c7-4750-8dd7-feed3f112c28"
+                guard="Not yet checked out to current user"
+                isLeaf="false">
+                <callBehaviorActionMoniker
+                  Id="ca99310f-5938-4bb6-825c-96dddc6aca9f"
+                  LastKnownName="Checkout"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="dfd303ab-d409-46bf-bc64-7bbad0bb470d"
+            name="Upload file"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2cd436e9-0fc1-4576-9751-95409b471b60"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="f13e5ec0-d456-40d2-b11b-f86222f0005f"
+                  LastKnownName="Decision3"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="890f11f9-310f-4b28-b9dc-0a7d3ba78f10"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8bffd286-e17e-4e99-96e3-29c7b4c917d0"
+                guard="Check out success"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="dfd303ab-d409-46bf-bc64-7bbad0bb470d"
+                  LastKnownName="Upload file"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="32235034-b2c5-4213-b191-88bdccc1f914"
+                guard="Checkout failse"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="1291fe19-5cfa-46b2-8e4f-419e2b87c636"
+                  LastKnownName="Return result"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode
+            Id="d12e148e-95e8-43b0-8174-3661bdd03af3"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <callBehaviorAction
+            Id="ca99310f-5938-4bb6-825c-96dddc6aca9f"
+            name="Checkout"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3d062574-1760-4e1d-9657-e85bb2cd335d"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="890f11f9-310f-4b28-b9dc-0a7d3ba78f10"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+            <behavior>
+              <activityMoniker
+                Id="9b2d21a2-219a-4978-8692-0b74300ba408"
+                LastKnownName="Checkout"
+                LastKnownLocation="Modeling.uml" />
+            </behavior>
+          </callBehaviorAction>
+          <opaqueAction
+            Id="1291fe19-5cfa-46b2-8e4f-419e2b87c636"
+            name="Return result"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="53c68239-0fa5-4af5-b57e-f660d4210729"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="d12e148e-95e8-43b0-8174-3661bdd03af3"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="f13e5ec0-d456-40d2-b11b-f86222f0005f"
+            name="Decision3"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5fd509d6-f5c5-4b03-9a47-9d2ea8596db8"
+                guard="Not require check out before edit"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="1291fe19-5cfa-46b2-8e4f-419e2b87c636"
+                  LastKnownName="Return result"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="00d81bb9-00f4-4e33-ab6f-7d340cb8b3a4"
+                guard="Require check out before edit"
+                isLeaf="false">
+                <callBehaviorActionMoniker
+                  Id="52f61fb7-b402-4b50-8c3f-4d782a072c49"
+                  LastKnownName="Check in"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <callBehaviorAction
+            Id="52f61fb7-b402-4b50-8c3f-4d782a072c49"
+            name="Check in"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ac21511b-25e0-41a5-8e61-03a4db143ff6"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="1291fe19-5cfa-46b2-8e4f-419e2b87c636"
+                  LastKnownName="Return result"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+            <behavior>
+              <activityMoniker
+                Id="c0983fcf-daab-4104-a6a4-9945403dedf6"
+                LastKnownName="Checkin"
+                LastKnownLocation="Modeling.uml" />
+            </behavior>
+          </callBehaviorAction>
+          <decisionNode
+            Id="acec7239-ff81-42e3-b367-134bf63e2a45"
+            name="Decision4"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="708f4962-439b-4c46-bf6b-7e0d0b43ad58"
+                guard="Not Exist"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="dfd303ab-d409-46bf-bc64-7bbad0bb470d"
+                  LastKnownName="Upload file"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="16660643-cdb9-4e3e-b478-2e54556cd4ad"
+                guard="Exist"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="c2033632-d634-4f1b-85e0-1e8962759ed6"
+                  LastKnownName="Decision5"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode
+            Id="c2033632-d634-4f1b-85e0-1e8962759ed6"
+            name="Decision5"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0505636d-9330-42e3-96a2-3052bca9cbba"
+                guard="Require check out before edit"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="ce9962ea-4ebf-4462-9845-8aea86b5ade1"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="5888895e-84e3-4b5c-b6fa-c3823656b2a8"
+                guard="Not require check out before edit"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="dfd303ab-d409-46bf-bc64-7bbad0bb470d"
+                  LastKnownName="Upload file"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="c0983fcf-daab-4104-a6a4-9945403dedf6"
+        name="Checkin"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="8dbf0cd5-bd97-4452-89de-4975af0e2c69"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="96ef3343-06be-4bdb-8c97-796b20abb697"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="4798c1f0-955a-4c84-8721-e29533c25b5d"
+                  LastKnownName="Select file"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="4798c1f0-955a-4c84-8721-e29533c25b5d"
+            name="Select file"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b68e2c34-6187-4171-b996-390025ea2607"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="7f63ef39-837b-4592-a9c2-8eafd75de70c"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="7f63ef39-837b-4592-a9c2-8eafd75de70c"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b8b94c26-05c5-4581-a0aa-01eeecbd4c8c"
+                guard="Y"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="706479b3-2b78-4c24-964d-78dddd326be1"
+                  LastKnownName="Check in"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="15f71a44-a1a8-4c16-977f-41fbf3ba9434"
+                guard="N"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="9c52f537-f078-4dd0-a0a1-445c1414560d"
+                  LastKnownName="Return result"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="706479b3-2b78-4c24-964d-78dddd326be1"
+            name="Check in"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2683ac8e-35c3-4f92-80cd-d515df1f003f"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="9c52f537-f078-4dd0-a0a1-445c1414560d"
+                  LastKnownName="Return result"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="f1b93fd4-b534-4518-8b3f-b68593fac3cb"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <opaqueAction
+            Id="9c52f537-f078-4dd0-a0a1-445c1414560d"
+            name="Return result"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ac26dfa3-19ea-47b3-b983-446a189b2e2a"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="f1b93fd4-b534-4518-8b3f-b68593fac3cb"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>
