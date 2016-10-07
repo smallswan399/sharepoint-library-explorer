@@ -44,6 +44,8 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.exportBtn = new System.Windows.Forms.Button();
+            this.importBtn = new System.Windows.Forms.Button();
             this.listViewItemContextMenuStrip.SuspendLayout();
             this.listViewContextMenuStrip.SuspendLayout();
             this.pnlBottom.SuspendLayout();
@@ -124,6 +126,8 @@
             // 
             // pnlBottom
             // 
+            this.pnlBottom.Controls.Add(this.importBtn);
+            this.pnlBottom.Controls.Add(this.exportBtn);
             this.pnlBottom.Controls.Add(this.btnCopy);
             this.pnlBottom.Controls.Add(this.btnAdd);
             this.pnlBottom.Controls.Add(this.btnClose);
@@ -198,6 +202,32 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // exportBtn
+            // 
+            this.exportBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.exportBtn.Location = new System.Drawing.Point(12, 143);
+            this.exportBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.exportBtn.Name = "exportBtn";
+            this.exportBtn.Size = new System.Drawing.Size(94, 27);
+            this.exportBtn.TabIndex = 5;
+            this.exportBtn.Text = "E&xport";
+            this.exportBtn.UseVisualStyleBackColor = true;
+            this.exportBtn.Visible = false;
+            this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
+            // 
+            // importBtn
+            // 
+            this.importBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.importBtn.Location = new System.Drawing.Point(12, 178);
+            this.importBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.importBtn.Name = "importBtn";
+            this.importBtn.Size = new System.Drawing.Size(94, 27);
+            this.importBtn.TabIndex = 6;
+            this.importBtn.Text = "&Import";
+            this.importBtn.UseVisualStyleBackColor = true;
+            this.importBtn.Visible = false;
+            this.importBtn.Click += new System.EventHandler(this.importBtn_Click);
+            // 
             // SitesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -239,5 +269,7 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button exportBtn;
+        private System.Windows.Forms.Button importBtn;
     }
 }
