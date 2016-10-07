@@ -46,6 +46,7 @@ namespace Main.Repos
             data.Sites.Add(new Site()
             {
                 Credential = obj.Credential,
+                IncludeSubSites = obj.IncludeSubSites,
                 Description = obj.Description,
                 Enable = obj.Enable,
                 Name = obj.Name,

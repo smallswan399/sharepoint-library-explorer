@@ -14,10 +14,10 @@ namespace Main
     public partial class SitesForm : Form
     {
         //public ISharePointService SharePointService { get; private set; }
-        private readonly IRepoProvider repoProvider;
+        private readonly IRepoProvider _repoProvider;
         public SitesForm(IRepoProvider repoProvider)
         {
-            this.repoProvider = repoProvider;
+            this._repoProvider = repoProvider;
             InitializeComponent();
 //#if !DEBUG
 //            this.TopMost = true;
@@ -61,7 +61,7 @@ namespace Main
             if (selectedItem != null)
             {
                 var siteId = (Guid)selectedItem.Tag;
-                var site = repoProvider.SiteRepository.GetById(siteId);
+                var site = _repoProvider.SiteRepository.GetById(siteId);
                 if (site != null)
                 {
                     var sharePointService = SharepointServiceProvider.GetSharePointService(new SiteSoapClientMapper()
@@ -113,7 +113,7 @@ namespace Main
             if (selectedItem != null)
             {
                 var siteId = (Guid)selectedItem.Tag;
-                var site = repoProvider.SiteRepository.GetById(siteId);
+                var site = _repoProvider.SiteRepository.GetById(siteId);
                 if (site != null)
                 {
                     var siteDetails = site.ToSiteDetails();
@@ -130,7 +130,7 @@ namespace Main
                         siteDetails = siteEdit.Model;
                         //var site = repoProvider.SiteRepository.GetById(siteDetails.Id);
                         site = siteDetails.ToSite(site);
-                        repoProvider.SaveChanges();
+                        _repoProvider.SaveChanges();
                         ReloadListView();
                     }
                 }
@@ -143,7 +143,7 @@ namespace Main
             if (selectedItem != null)
             {
                 var siteId = (Guid)selectedItem.Tag;
-                var site = repoProvider.SiteRepository.GetById(siteId);
+                var site = _repoProvider.SiteRepository.GetById(siteId);
                 if (site != null)
                 {
                     var siteDetails = site.ToSiteDetails();
@@ -157,8 +157,8 @@ namespace Main
 
                     if (siteEdit.ShowDialog() == DialogResult.OK)
                     {
-                        repoProvider.SiteRepository.Delete(site);
-                        repoProvider.SaveChanges();
+                        _repoProvider.SiteRepository.Delete(site);
+                        _repoProvider.SaveChanges();
                         ReloadListView();
                     }
                 }
@@ -169,7 +169,7 @@ namespace Main
         {
             siteListView.Items.Clear();
             // load sites from database
-            var sites = repoProvider.SiteRepository.GetAll().OrderBy(s => s.Name);
+            var sites = _repoProvider.SiteRepository.GetAll().OrderBy(s => s.Name);
             var model = sites.ToSiteListItem();
             model.ToList().ForEach(s => siteListView.Items.Add(new ListViewItem(new[] { s.Enable, s.Url, s.Name, s.CredentialUsername, s.Description }, 0)
             {
@@ -194,7 +194,7 @@ namespace Main
             if (addSiteDialog.ShowDialog() == DialogResult.OK)
             {
                 var newSite = addSiteDialog.Model;
-                repoProvider.SiteRepository.Add(new Site()
+                _repoProvider.SiteRepository.Add(new Site()
                 {
                     Credential = new Credential()
                     {
@@ -209,9 +209,11 @@ namespace Main
                     Enable = newSite.Enable,
                     Description = newSite.Description,
                     RequireAuthentication = newSite.RequireAuthentication,
-                    Url = newSite.Url
+                    Url = newSite.Url,
+                    IncludeSubSites = newSite.IncludeSubSites,
+                    SharePointServerVersion = newSite.SharePointServerVersion
                 });
-                repoProvider.SaveChanges();
+                _repoProvider.SaveChanges();
                 ReloadListView();
             }
         }
@@ -228,7 +230,7 @@ namespace Main
             if (addSiteDialog.ShowDialog() == DialogResult.OK)
             {
                 var newSite = addSiteDialog.Model;
-                repoProvider.SiteRepository.Add(new Site()
+                _repoProvider.SiteRepository.Add(new Site()
                 {
                     Credential = newSite.Credential.ToCredential(),
                     Name = newSite.Name,
@@ -236,9 +238,10 @@ namespace Main
                     Description = newSite.Description,
                     RequireAuthentication = newSite.RequireAuthentication,
                     Url = newSite.Url,
-                    SharePointServerVersion = newSite.SharePointServerVersion
+                    SharePointServerVersion = newSite.SharePointServerVersion,
+                    IncludeSubSites = newSite.IncludeSubSites
                 });
-                repoProvider.SaveChanges();
+                _repoProvider.SaveChanges();
                 ReloadListView();
             }
         }
@@ -249,7 +252,7 @@ namespace Main
             if (selectedItem != null)
             {
                 var siteId = (Guid)selectedItem.Tag;
-                var site = repoProvider.SiteRepository.GetById(siteId);
+                var site = _repoProvider.SiteRepository.GetById(siteId);
                 if (site != null)
                 {
                     var siteDetails = site.ToSiteDetails();
@@ -266,7 +269,7 @@ namespace Main
                         siteDetails = siteEdit.Model;
                         //var site = repoProvider.SiteRepository.GetById(siteDetails.Id);
                         site = siteDetails.ToSite(site);
-                        repoProvider.SaveChanges();
+                        _repoProvider.SaveChanges();
                         ReloadListView();
                     }
                 }
@@ -279,7 +282,7 @@ namespace Main
             if (selectedItem != null)
             {
                 var siteId = (Guid)selectedItem.Tag;
-                var site = repoProvider.SiteRepository.GetById(siteId);
+                var site = _repoProvider.SiteRepository.GetById(siteId);
                 if (site != null)
                 {
                     var siteDetails = site.ToSiteDetails();
@@ -293,8 +296,8 @@ namespace Main
 
                     if (siteEdit.ShowDialog() == DialogResult.OK)
                     {
-                        repoProvider.SiteRepository.Delete(site);
-                        repoProvider.SaveChanges();
+                        _repoProvider.SiteRepository.Delete(site);
+                        _repoProvider.SaveChanges();
                         ReloadListView();
                     }
                 }
@@ -307,7 +310,7 @@ namespace Main
             if (selectedItem != null)
             {
                 var siteId = (Guid)selectedItem.Tag;
-                var site = repoProvider.SiteRepository.GetById(siteId);
+                var site = _repoProvider.SiteRepository.GetById(siteId);
                 if (site != null)
                 {
                     var siteDetails = site.ToSiteDetails();
@@ -326,8 +329,8 @@ namespace Main
                         //var site = repoProvider.SiteRepository.GetById(siteDetails.Id);
                         site = siteDetails.ToSite();
 
-                        repoProvider.SiteRepository.Add(site);
-                        repoProvider.SaveChanges();
+                        _repoProvider.SiteRepository.Add(site);
+                        _repoProvider.SaveChanges();
                         ReloadListView();
                     }
                 }

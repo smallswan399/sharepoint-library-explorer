@@ -465,7 +465,7 @@ namespace Main
             this.refreshRootToolStripMenuItem,
             this.siteManagerToolStripMenuItem});
             this.rootNodeContextMenuStrip.Name = "rootNodeContextMenuStrip";
-            this.rootNodeContextMenuStrip.Size = new System.Drawing.Size(154, 70);
+            this.rootNodeContextMenuStrip.Size = new System.Drawing.Size(154, 92);
             // 
             // addSiteToolStripMenuItem
             // 

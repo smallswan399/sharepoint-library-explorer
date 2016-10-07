@@ -110,7 +110,7 @@ namespace Main.Services
 
         public async Task<SharePointSite> GetSharePointSiteAsync()
         {
-            return await Task.Factory.StartNew(() => GetSharePointSite());
+            return await Task.Factory.StartNew(GetSharePointSite);
         }
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace Main.Services
                 context.Load(subSites, s => s.Include(t => t.Description),
                     s => s.Include(t => t.Title), s => s.Include(t => t.ServerRelativeUrl));
                 context.ExecuteQuery();
-                return subSites.ToList().Select(s => new SharePointSite()
+                var sites = subSites.ToList().Select(s => new SharePointSite()
                 {
                     Url = SiteSoapClientMapper.RootUrl.CombineUrl(s.ServerRelativeUrl),
                     Description = s.Description,
@@ -136,6 +136,7 @@ namespace Main.Services
                     //                s.ServerRelativeUrl.Length),
                     RelativeUrl = s.ServerRelativeUrl
                 });
+                return sites;
             }
             catch (Exception ex)
             {

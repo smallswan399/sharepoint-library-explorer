@@ -247,7 +247,8 @@ namespace Main
                     Enable = newSite.Enable,
                     Description = newSite.Description,
                     RequireAuthentication = newSite.RequireAuthentication,
-                    Url = newSite.Url
+                    Url = newSite.Url,
+                    IncludeSubSites = newSite.IncludeSubSites
                 });
 
                 // Save to site.xml
