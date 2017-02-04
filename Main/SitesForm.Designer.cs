@@ -243,7 +243,7 @@
             this.MinimizeBox = false;
             this.Name = "SitesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Litera SharePoint Site Manager";
+            this.Text = "SharePoint Site Manager";
             this.Load += new System.EventHandler(this.IndexForm_Load);
             this.Shown += new System.EventHandler(this.SitesForm_Shown);
             this.listViewItemContextMenuStrip.ResumeLayout(false);

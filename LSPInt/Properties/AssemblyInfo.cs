@@ -2,12 +2,12 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Litera SharePoint Integration")]
-[assembly: AssemblyDescription("Litera SharePoint Integration")]
+[assembly: AssemblyTitle("SharePoint Library Explorer")]
+[assembly: AssemblyDescription("SharePoint Library Explorer")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Litera Corp.")]
-[assembly: AssemblyProduct("Litera SharePoint Integration")]
-[assembly: AssemblyCopyright("Copyright (c) 2010-2016 by Litera Corp.")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SharePoint Library Explorer")]
+[assembly: AssemblyCopyright("Copyright (c) 2010-2016 by ddnguyen0702@hotmail.com")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

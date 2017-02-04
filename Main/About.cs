@@ -16,7 +16,7 @@ namespace Main
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
             var fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
             var version = fvi.FileVersion;
-            label1.Text = $"Litera SharePoint Integration - v{version}";
+            label1.Text = $"SharePoint Library Explorer - v{version}";
         }
 
         private void okBtn_Click(object sender, EventArgs e)
