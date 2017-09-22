@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Main", "Main\Main.csproj", "{7A41A9DC-6CA4-441B-AB9D-DC616D431E99}"
 EndProject
@@ -30,7 +30,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EponaExtensionTest", "Epona
 EndProject
 Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "EponaExtensionSetup", "EponaExtensionSetup\EponaExtensionSetup.isproj", "{1E03E492-35EF-410E-998D-68D1C8343D9D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{DED8E859-DF67-4E27-8323-D738EB37248D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "POC", "POC", "{DED8E859-DF67-4E27-8323-D738EB37248D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeProMockup", "ChangeProMockup\ChangeProMockup.csproj", "{B82F1825-BCE0-496D-9D02-3869200C2753}"
 EndProject
@@ -178,5 +178,6 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		VisualSVNWorkingCopyRoot = .
+		SolutionGuid = {333C73F1-5E9C-433C-8CB2-98269F59E41F}
 	EndGlobalSection
 EndGlobal
